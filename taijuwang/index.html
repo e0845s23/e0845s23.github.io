@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>泰剧网-泰剧在线观看_泰剧网最新泰剧推荐与剧集更新</title>
+<meta name="description" content="泰剧网为泰剧爱好者汇集泰剧在线观看入口、最新泰剧推荐与剧集更新动态，按类型与热度浏览，快速找到想看的泰剧与追剧线索。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2a3d'/%3E%3Cpath d='M20 18h24a4 4 0 0 1 4 4v24l-16-8-16 8V22a4 4 0 0 1 4-4z' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0f2a3d;
+  --ink-soft:#274b63;
+  --paper:#f7f4ee;
+  --card:#ffffff;
+  --gold:#f2b544;
+  --gold-deep:#d99420;
+  --line:#e3ddd2;
+  --muted:#6c7b86;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,42,61,.96);
+  backdrop-filter:blur(8px);
+  color:#fff;
+  border-bottom:1px solid rgba(242,181,68,.25);
+}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.18rem;letter-spacing:.5px}
+.brand .mark{width:34px;height:34px;flex:none}
+.nav-links{display:flex;gap:22px;font-size:.94rem;color:#d7e2ea}
+.nav-links a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover{color:var(--gold);border-color:var(--gold)}
+.nav-cta{
+  display:inline-block;background:var(--gold);color:#1d2b34;font-weight:700;
+  padding:8px 16px;border-radius:999px;font-size:.9rem;white-space:nowrap;
+  transition:.2s;
+}
+.nav-cta:hover{background:#ffc95c}
+.menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;padding:6px 10px;font-size:.9rem;cursor:pointer}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(242,181,68,.22),transparent 55%),
+    linear-gradient(160deg,#0f2a3d 0%,#173c54 62%,#1d4a63 100%);
+  color:#fff;
+  padding:56px 0 64px;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-60px;bottom:-80px;width:320px;height:320px;
+  border:2px dashed rgba(242,181,68,.35);border-radius:50%;
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;position:relative;z-index:2}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(242,181,68,.15);color:var(--gold);
+  border:1px solid rgba(242,181,68,.45);
+  padding:5px 14px;border-radius:999px;font-size:.82rem;letter-spacing:1px;
+}
+h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.25;margin:18px 0 14px;font-weight:800;letter-spacing:1px}
+.hero p.lead{color:#d3e0e9;font-size:1.02rem;max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;align-items:center}
+.btn-primary{
+  background:var(--gold);color:#1d2b34;font-weight:700;
+  padding:12px 26px;border-radius:999px;font-size:1rem;
+  box-shadow:0 8px 20px rgba(242,181,68,.28);transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-2px);background:#ffc95c}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,.45);color:#fff;
+  padding:11px 22px;border-radius:999px;font-size:.95rem;transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+.hero-stats div strong{display:block;font-size:1.45rem;color:var(--gold);font-weight:800}
+.hero-stats div span{font-size:.85rem;color:#b9cad6}
+
+/* poster art */
+.poster{
+  background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;padding:18px;
+  backdrop-filter:blur(4px);
+}
+.poster svg{width:100%;height:auto;border-radius:12px}
+.poster figcaption{font-size:.82rem;color:#c4d4df;margin-top:12px;text-align:center;letter-spacing:.5px}
+
+/* sections */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:800;position:relative;padding-left:16px}
+.sec-head h2::before{
+  content:"";position:absolute;left:0;top:8px;bottom:8px;width:5px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-deep));
+}
+.sec-head p{color:var(--muted);font-size:.92rem;max-width:38em}
+
+/* filter */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--ink-soft);
+  padding:7px 16px;border-radius:999px;font-size:.88rem;cursor:pointer;transition:.2s;
+}
+.chip.active,.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.25s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,42,61,.1);border-color:#d8cfbe}
+.card .thumb{background:#eef1f3;position:relative;aspect-ratio:16/9}
+.card .thumb svg{width:100%;height:100%}
+.badge{
+  position:absolute;top:10px;left:10px;background:rgba(15,42,61,.86);color:var(--gold);
+  font-size:.74rem;padding:3px 10px;border-radius:999px;letter-spacing:.5px;
+}
+.card-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;gap:8px}
+.card-body h3{font-size:1.06rem;font-weight:700}
+.card-body p{font-size:.88rem;color:var(--muted);flex:1}
+.meta{display:flex;justify-content:space-between;font-size:.78rem;color:#8b98a3;border-top:1px dashed var(--line);padding-top:10px}
+
+/* split content */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.prose h3{font-size:1.1rem;margin:20px 0 8px;color:var(--ink-soft)}
+.prose h3:first-child{margin-top:0}
+.prose p{color:#3f5566;font-size:.96rem;margin-bottom:12px}
+.note{
+  background:#fff;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;
+  padding:16px 20px;color:#41596b;font-size:.93rem;
+}
+.list-clean{list-style:none;display:grid;gap:14px}
+.list-clean li{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.list-clean .dot{
+  width:30px;height:30px;flex:none;border-radius:9px;background:#fdf1d8;color:var(--gold-deep);
+  display:grid;place-items:center;font-weight:800;font-size:.9rem;
+}
+.list-clean strong{display:block;font-size:.97rem}
+.list-clean span{font-size:.85rem;color:var(--muted)}
+
+/* update table */
+.updates{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.update-row{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr auto;gap:14px;align-items:center;
+  padding:14px 20px;border-bottom:1px solid #f0ece3;font-size:.9rem;
+}
+.update-row:last-child{border-bottom:none}
+.update-row.head{background:#f8f5ee;font-weight:700;color:var(--ink-soft);font-size:.84rem;letter-spacing:.5px}
+.update-row .status{font-size:.78rem;color:var(--gold-deep);background:#fdf1d8;padding:2px 10px;border-radius:999px;justify-self:start}
+
+/* download */
+.download{
+  background:linear-gradient(135deg,#0f2a3d,#1d4a63);
+  color:#fff;border-radius:20px;padding:40px;
+  display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+.download h2{font-size:1.5rem;margin-bottom:8px}
+.download p{color:#c8d8e3;font-size:.94rem;max-width:36em}
+.btn-disabled{
+  background:rgba(255,255,255,.12);border:1px solid rgba(242,181,68,.6);
+  color:var(--gold);padding:12px 30px;border-radius:999px;font-weight:700;font-size:.95rem;
+  pointer-events:none;cursor:default;
+}
+
+/* footer */
+footer.site{background:#0b1f2d;color:#9fb2c0;padding:44px 0 26px;font-size:.88rem}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;margin-bottom:30px}
+.foot-grid h4{color:#fff;font-size:.98rem;margin-bottom:12px}
+.foot-grid a{display:block;padding:3px 0;transition:.2s}
+.foot-grid a:hover{color:var(--gold)}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:12px}
+.foot-brand .mark{width:28px;height:28px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.8rem;color:#7d8fa0}
+
+@media(max-width:900px){
+  .hero-grid,.split{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .poster{order:-1;max-width:420px;margin:0 auto}
+}
+@media(max-width:640px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#0f2a3d;flex-direction:column;gap:0;padding:10px 6vw 18px;border-bottom:1px solid rgba(242,181,68,.3)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .menu-toggle{display:inline-block}
+  .navbar{gap:10px}
+  .nav-cta{padding:7px 13px;font-size:.82rem}
+  .hero{padding:38px 0 46px}
+  .hero-stats{gap:20px}
+  .card-grid{grid-template-columns:1fr}
+  .update-row{grid-template-columns:1fr 1fr;gap:6px 12px;font-size:.85rem}
+  .update-row.head{display:none}
+  section{padding:40px 0}
+  .download{padding:28px 22px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap navbar">
+    <a class="brand" href="#top" aria-label="泰剧网 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0f2a3d" stroke="#f2b544" stroke-width="2"/>
+        <path d="M20 18h24a4 4 0 0 1 4 4v24l-16-8-16 8V22a4 4 0 0 1 4-4z" fill="#f2b544"/>
+      </svg>
+      <span>泰剧网</span>
+    </a>
+    <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="navLinks">菜单</button>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#hot">热门泰剧</a>
+      <a href="#types">剧集分类</a>
+      <a href="#updates">更新动态</a>
+      <a href="#guide">追剧须知</a>
+    </nav>
+    <a class="nav-cta" href="#hot">开始追剧</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline">泰剧观看入口 · 剧集更新</span>
+        <h1>泰剧网</h1>
+        <p class="lead">泰剧网面向喜欢泰剧的观众，汇集常见题材的泰剧在线观看入口、最新泰剧推荐与剧集更新线索，按类型与热度整理，方便你快速定位想看的那一部。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#hot">浏览热门泰剧</a>
+          <a class="btn-ghost" href="#updates">查看更新动态</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>6 类</strong><span>常见泰剧题材</span></div>
+          <div><strong>每周</strong><span>更新排版节奏</span></div>
+          <div><strong>1 页</strong><span>集中追剧入口</span></div>
+        </div>
+      </div>
+      <figure class="poster">
+        <svg viewBox="0 0 400 300" role="img" aria-label="泰剧网主题插画：屏幕与胶片元素">
+          <defs>
+            <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1d4a63"/>
+              <stop offset="1" stop-color="#0f2a3d"/>
+            </linearGradient>
+          </defs>
+          <rect x="24" y="30" width="352" height="200" rx="16" fill="url(#scr)" stroke="#f2b544" stroke-width="2"/>
+          <circle cx="200" cy="130" r="42" fill="none" stroke="#f2b544" stroke-width="2" opacity=".55"/>
+          <path d="M188 110l34 20-34 20z" fill="#f2b544"/>
+          <rect x="60" y="252" width="60" height="16" rx="8" fill="#f2b544" opacity=".85"/>
+          <rect x="132" y="252" width="60" height="16" rx="8" fill="#ffffff" opacity=".28"/>
+          <rect x="204" y="252" width="60" height="16" rx="8" fill="#ffffff" opacity=".28"/>
+          <rect x="276" y="252" width="64" height="16" rx="8" fill="#ffffff" opacity=".28"/>
+          <path d="M44 62h18v18H44zM344 62h-18v18h18z" fill="#f2b544" opacity=".5"/>
+        </svg>
+        <figcaption>追剧入口 · 题材导航 · 更新提示</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热门泰剧推荐</h2>
+          <p>泰剧网按常见题材整理值得优先查看的剧集，覆盖爱情、悬疑、校园与家庭等方向，方便按兴趣挑选。</p>
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="题材筛选">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="love">爱情</button>
+        <button class="chip" data-filter="crime">悬疑</button>
+        <button class="chip" data-filter="campus">校园</button>
+        <button class="chip" data-filter="family">家庭</button>
+      </div>
+
+      <div class="card-grid" id="cardGrid">
+        <article class="card" data-cat="love">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#f6e3e8"/><circle cx="120" cy="92" r="34" fill="#e8a3b4"/><circle cx="188" cy="92" r="34" fill="#f2b544" opacity=".8"/><path d="M0 150h320" stroke="#d99420" stroke-width="2" opacity=".4"/></svg>
+            <span class="badge">爱情</span>
+          </div>
+          <div class="card-body">
+            <h3>都市情感剧</h3>
+            <p>以都市职场为背景的情感线，人物关系清晰，适合喜欢慢热推进的观众。</p>
+            <div class="meta"><span>适合：通勤观看</span><span>更新中</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="crime">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#dde6ea"/><circle cx="160" cy="90" r="42" fill="none" stroke="#0f2a3d" stroke-width="4"/><path d="M190 120l34 34" stroke="#0f2a3d" stroke-width="6" stroke-linecap="round"/><rect x="28" y="140" width="70" height="6" rx="3" fill="#f2b544"/></svg>
+            <span class="badge">悬疑</span>
+          </div>
+          <div class="card-body">
+            <h3>悬疑推理剧</h3>
+            <p>围绕线索展开的推理结构，节奏偏快，适合连续追看与讨论剧情节点。</p>
+            <div class="meta"><span>适合：连看</span><span>待更新</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="campus">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#e3efe6"/><path d="M60 130l40-46 40 46z" fill="#7fb69a"/><circle cx="220" cy="70" r="22" fill="#f2b544"/><rect x="40" y="140" width="240" height="6" rx="3" fill="#274b63" opacity=".35"/></svg>
+            <span class="badge">校园</span>
+          </div>
+          <div class="card-body">
+            <h3>青春校园剧</h3>
+            <p>围绕校园生活与成长展开，氛围轻快，适合碎片时间观看。</p>
+            <div class="meta"><span>适合：碎片时间</span><span>已完结</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="family">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#f7efdc"/><rect x="80" y="70" width="160" height="80" rx="8" fill="#e8c98a"/><path d="M70 80l90-46 90 46z" fill="#d99420"/><rect x="146" y="108" width="28" height="42" fill="#0f2a3d" opacity=".4"/></svg>
+            <span class="badge">家庭</span>
+          </div>
+          <div class="card-body">
+            <h3>家庭伦理剧</h3>
+            <p>聚焦家庭关系与代际沟通，人物冲突细腻，适合偏好情感深度的观众。</p>
+            <div class="meta"><span>适合：周末连看</span><span>更新中</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="love">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#f2e6f2"/><path d="M160 128c-26-22-44-38-44-58a22 22 0 0 1 44-6 22 22 0 0 1 44 6c0 20-18 36-44 58z" fill="#c98fc9"/><circle cx="60" cy="50" r="10" fill="#f2b544"/><circle cx="262" cy="130" r="14" fill="#f2b544" opacity=".6"/></svg>
+            <span class="badge">爱情</span>
+          </div>
+          <div class="card-body">
+            <h3>轻喜剧爱情剧</h3>
+            <p>以误会与巧合推动的轻喜剧结构，台词轻松，适合放松观看。</p>
+            <div class="meta"><span>适合：放松观看</span><span>已完结</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="crime">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#e6e9f2"/><rect x="60" y="40" width="200" height="100" rx="10" fill="#0f2a3d" opacity=".85"/><path d="M90 90h30l14-24 18 46 14-22h58" stroke="#f2b544" stroke-width="4" fill="none" stroke-linejoin="round"/></svg>
+            <span class="badge">悬疑</span>
+          </div>
+          <div class="card-body">
+            <h3>犯罪调查剧</h3>
+            <p>以案件调查为主轴，注重信息推进与反转，适合喜欢梳理线索的观众。</p>
+            <div class="meta"><span>适合：专注追看</span><span>更新中</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES / GUIDE -->
+  <section id="types" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap split">
+      <div class="prose">
+        <h2 style="font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:800;padding-left:16px;position:relative;margin-bottom:20px">
+          <span style="position:absolute;left:0;top:8px;bottom:8px;width:5px;border-radius:3px;background:linear-gradient(180deg,var(--gold),var(--gold-deep))"></span>
+          泰剧网怎么看：题材与选择
+        </h2>
+        <p>泰剧网把常见的泰剧题材先做一次归类，再按热度与更新状态排序。对刚接触泰剧的观众来说，先确定题材往往比直接翻列表更有效率：喜欢情感推进的可以先看爱情与家庭两类，喜欢强情节的则从悬疑与犯罪调查入手。</p>
+        <h3>题材决定观看节奏</h3>
+        <p>爱情与家庭剧集通常以人物关系为主线，单集信息密度相对均匀，适合通勤或睡前分段观看；悬疑与犯罪调查剧更依赖前后呼应，连续观看更容易跟住线索。</p>
+        <h3>更新状态影响追剧安排</h3>
+        <p>已完结的剧集可以一次性规划观看顺序，更新中的剧集则更适合先看前几集确认口味，再决定是否跟进。泰剧网在卡片与更新列表中标注了状态，便于安排时间。</p>
+        <h3>先看口碑再决定投入</h3>
+        <p>长剧的观看成本不低，建议先看简介与题材标签，再参考讨论热度。泰剧网的推荐区只做题材与状态的整理，不替代个人的观看判断。</p>
+      </div>
+
+      <div id="guide">
+        <ul class="list-clean">
+          <li>
+            <span class="dot">1</span>
+            <div><strong>确定题材方向</strong><span>先在爱情、悬疑、校园、家庭中选定一类，缩小范围。</span></div>
+          </li>
+          <li>
+            <span class="dot">2</span>
+            <div><strong>核对更新状态</strong><span>已完结适合一次规划，更新中适合先试看再跟进。</span></div>
+          </li>
+          <li>
+            <span class="dot">3</span>
+            <div><strong>按单集时长安排</strong><span>结合通勤、午休与周末时段，选择匹配的观看方式。</span></div>
+          </li>
+          <li>
+            <span class="dot">4</span>
+            <div><strong>记录进度避免重复</strong><span>为每部剧记下已看集数，追多部时更从容。</span></div>
+          </li>
+        </ul>
+        <div class="note" style="margin-top:20px">
+          泰剧网的栏目围绕「找剧—选剧—追剧」三个动作展开：上方是题材入口，下方是更新动态，遇到不确定的剧集时，先回到题材与状态两条线索判断即可。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPDATES -->
+  <section id="updates">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>剧集更新动态</h2>
+          <p>按题材与状态汇总的更新线索，用于安排接下来的追剧顺序，具体集数以实际页面为准。</p>
+        </div>
+      </div>
+      <div class="updates">
+        <div class="update-row head">
+          <span>剧集方向</span><span>题材</span><span>状态</span><span>查看</span>
+        </div>
+        <div class="update-row">
+          <span>都市情感剧</span><span>爱情</span><span class="status">更新中</span><a href="#hot">查看</a>
+        </div>
+        <div class="update-row">
+          <span>悬疑推理剧</span><span>悬疑</span><span class="status">待更新</span><a href="#hot">查看</a>
+        </div>
+        <div class="update-row">
+          <span>青春校园剧</span><span>校园</span><span class="status">已完结</span><a href="#hot">查看</a>
+        </div>
+        <div class="update-row">
+          <span>家庭伦理剧</span><span>家庭</span><span class="status">更新中</span><a href="#hot">查看</a>
+        </div>
+        <div class="update-row">
+          <span>犯罪调查剧</span><span>悬疑</span><span class="status">更新中</span><a href="#hot">查看</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD / CTA -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>把泰剧网加入追剧清单</h2>
+          <p>下载入口用于保存页面收藏与追剧说明，方便在手机上快速回到题材导航与更新动态。泰剧网的内容整理会持续补充，收藏后按需查看即可。</p>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0f2a3d" stroke="#f2b544" stroke-width="2"/>
+            <path d="M20 18h24a4 4 0 0 1 4 4v24l-16-8-16 8V22a4 4 0 0 1 4-4z" fill="#f2b544"/>
+          </svg>
+          <span>泰剧网</span>
+        </div>
+        <p>泰剧网是面向泰剧观众的剧集导航页，按题材整理观看入口与更新线索，帮助观众更快决定先看哪一部。</p>
+      </div>
+      <div>
+        <h4>站内导航</h4>
+        <a href="#hot">热门泰剧</a>
+        <a href="#types">剧集分类</a>
+        <a href="#updates">更新动态</a>
+        <a href="#guide">追剧须知</a>
+      </div>
+      <div>
+        <h4>常见题材</h4>
+        <a href="#hot">爱情泰剧</a>
+        <a href="#hot">悬疑泰剧</a>
+        <a href="#hot">校园泰剧</a>
+        <a href="#hot">家庭泰剧</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 泰剧网 · 剧集导航与追剧线索整理</span>
+      <span>内容以题材与状态整理为主，具体集数以实际页面为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var links = document.getElementById('navLinks');
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#cardGrid .card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var show = (f === 'all' || card.getAttribute('data-cat') === f);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
